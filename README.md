@@ -26,6 +26,9 @@ Flop Ratio = Number of flops / Number of cells = 1613/14876 = 0.108 = 10.8%
 
 ![Screenshot from 2024-07-25 23-16-09](https://github.com/user-attachments/assets/a3352849-d084-4a2c-ad59-b0f9cdf1a14e)
 
+![Screenshot from 2024-07-25 23-45-52](https://github.com/user-attachments/assets/a6ca43df-8098-4f94-a9e3-42953ae43ae3)
+
+
 
 
 
