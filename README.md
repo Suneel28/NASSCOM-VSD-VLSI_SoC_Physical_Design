@@ -28,6 +28,51 @@ Flop Ratio = Number of flops / Number of cells = 1613/14876 = 0.108 = 10.8%
 
 ![Screenshot from 2024-07-25 23-45-52](https://github.com/user-attachments/assets/a6ca43df-8098-4f94-a9e3-42953ae43ae3)
 
+DAY2 Floorplan and Placement
+Floorplan
+There are various floorplan configurations that can be modified based on the requirement
+
+![Screenshot from 2024-07-27 23-54-07](https://github.com/user-attachments/assets/7568b790-c96c-4cc6-ad35-5b464f338404)
+
+Run the floorplan using run_floorplan
+
+<img width="611" alt="image" src="https://github.com/user-attachments/assets/515e5ee9-24ed-4f2f-b580-e945a153a2d0">
+
+The Configurations of floorplan are :-
+
+![Screenshot from 2024-07-29 22-11-59](https://github.com/user-attachments/assets/8157e9d7-f968-440f-8b8c-0c455ae49e23)
+
+MAGIC Tool
+The Magic tool is an open-source layout editor used for VLSI design. It provides a graphical interface for viewing and editing IC layouts, allowing designers to inspect and modify the floorplan, placement, and routing of their designs. Magic is widely used for its ease of use and integration with other tools in the ASIC design flow.
+
+To open the magic window use the command :
+magic -T home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def & 
+
+
+<img width="612" alt="image" src="https://github.com/user-attachments/assets/f39a9821-26a2-439c-8484-4ee9b4648966">
+
+The cells in the layout can be identified by selecting the cell and typing the command what in the console
+
+![Screenshot from 2024-07-29 22-29-12](https://github.com/user-attachments/assets/70f9cf61-cc7a-4459-8fc6-1d8c91a01939)
+
+Placement
+
+To run the placement type the command run_placement
+
+![Screenshot from 2024-07-29 22-03-53](https://github.com/user-attachments/assets/8ed3d879-eb06-482d-b72e-85d0f07b3504)
+
+We perform the global placement first which is used to achieve less wire length.
+
+To Open the layout after placement type the command magic -T home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def & 
+
+![image](https://github.com/user-attachments/assets/dedea326-04c7-47fe-ba75-2d3977926e00)
+
+
+
+
+
+
+
 
 
 
