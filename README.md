@@ -120,23 +120,35 @@ Calculation of Propagation Delay
 
 Propagation delay is the time it takes for a signal to travel from the input to the output of a circuit. For instance, the propagation delay can be calculated as [2.15 - 2.10] x10^-9 = 48.9ps
 
+
+
 The Screen shot of Propagation Delay
+
 <img width="514" alt="image" src="https://github.com/user-attachments/assets/46e7b394-f14e-4c99-9be8-a138349fc5cb">
+
+
 By Using command magic -d XR open the magic tool Open the met3.mag file
 
 <img width="559" alt="image" src="https://github.com/user-attachments/assets/a7c655ee-0927-430e-8b02-1e1829ce248b">
+
+
 To find the DRC Error, select the part containing the error and type the command why in the console
 
 <img width="559" alt="image" src="https://github.com/user-attachments/assets/bb3a21b6-56b6-410e-84f8-87c00c38aa5e">
+
+
 To see contact cuts execute the command cif see VIA2 in the console
 
 <img width="526" alt="image" src="https://github.com/user-attachments/assets/4d488ba9-0382-4506-ad16-62f9be248a27">
+
 There are many DRC errors found, to fix one of the error i.e, error poly.9 follow the follwing steps
 
 nwell.mag is loaded
 
 Find out why is the error occuring
 <img width="602" alt="image" src="https://github.com/user-attachments/assets/bb76b18c-7240-4742-82b2-5a98b43c0432">
+
+
 To fix this DRC error we make some changes in the sky130A.tech file
 
 
