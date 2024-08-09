@@ -68,6 +68,38 @@ To Open the layout after placement type the command magic -T home/vsduser/Deskto
 ![image](https://github.com/user-attachments/assets/dedea326-04c7-47fe-ba75-2d3977926e00)
 
 
+Day 3 Design of Inverter cell using and transient chara of the designed cell using spice
+We can see that the IO is placed diagonally equividistant in the floorplan.
+
+<img width="592" alt="image" src="https://github.com/user-attachments/assets/ea5ebc5f-9a6a-4d97-8b98-fab6bab2dfea">
+
+This is can be changed in the command present in config.tcl
+
+In the next step we clone the inverter cell from the Github repository.
+
+To Clone, run the following command in working directory: git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+
+
+<img width="620" alt="image" src="https://github.com/user-attachments/assets/3cbd1d96-c22c-4bd6-b7f6-f509bbf91fc3">
+
+
+To open the layout in Magic tool, Use the command magic -T {absolute_path_of_the_tech_file_of_the_cell} {absolute_path_of_the_mag_file_of_the_cell}
+
+The inverter std_cell which was cloned is opened as shown in the figure
+
+<img width="616" alt="image" src="https://github.com/user-attachments/assets/62f12daf-0bea-4416-a759-7884d83865a9">
+
+The files are generated as shown in the figure
+
+<img width="609" alt="image" src="https://github.com/user-attachments/assets/a7681b82-e40b-4dce-b93d-c75171bf4fc9">
+
+
+
+
+
+
+
+
 
 
 
