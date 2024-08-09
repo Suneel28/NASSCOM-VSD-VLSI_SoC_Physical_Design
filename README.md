@@ -152,6 +152,93 @@ Find out why is the error occuring
 To fix this DRC error we make some changes in the sky130A.tech file
 
 
+<img width="587" alt="image" src="https://github.com/user-attachments/assets/22667855-b431-4ed0-9927-4bdfd67cf87d">
+
+
+After the changes, load the sky130A.tech file perform the DRC to check the poly.9 error
+
+
+<img width="503" alt="image" src="https://github.com/user-attachments/assets/b5f15873-49f1-4c7c-9c98-fd5fe6a354ef">
+
+Now we perforam an activity to show a DRC error as a geometric construct:
+Open nwell.mag and execute the following commands in the console
+
+<img width="479" alt="image" src="https://github.com/user-attachments/assets/81327eaa-3fba-4fc2-8a8a-a68d5dd8bc16">
+
+To remove the error, open the tech file and make thefollwing changes:
+
+<img width="379" alt="image" src="https://github.com/user-attachments/assets/84e86222-e971-4922-9ab4-feff2a84df14">
+
+After removing the error
+
+<img width="525" alt="image" src="https://github.com/user-attachments/assets/ee0e756a-3de5-4640-a0d2-7d459c18d7e1">
+
+Day 4 - Prelayout design and Clock Tree Synthesis
+
+Primary Requirement for P&R:
+
+The I/O ports must be positioned at the junctions where the vertical and horizontal tracks intersect. The standard cell's width should be an odd multiple of the track's horizontal pitch. Additionally, the standard cell's height must be an odd multiple of the track's vertical pitch.
+
+Coverting to grid info by using command grid [xSpacing [ySpacing [xOrigin yOrigin]]] i.e, grid 0.46um 0.34um 0.23um 0.17um
+
+<img width="613" alt="image" src="https://github.com/user-attachments/assets/a4e7b4b1-2d04-4a13-ac81-479931a9c866">
+
+
+Make the following changes to the config.tcl file after copying .lib and .lef files to src of the picorv32a
+
+
+<img width="425" alt="image" src="https://github.com/user-attachments/assets/260620aa-3d58-4e36-bf6a-53dd114e8749">
+
+Run the flow from the beginning and then run the following command
+
+set lefs  $::env(DESIGN_DIR)/src/*.lef add_lefs -src $lefs
+
+Then run the command run_synthesis to check the new inverter is added to the picorv32a
+
+<img width="611" alt="image" src="https://github.com/user-attachments/assets/028c512d-3760-4a66-a635-4b1f7bfde813">
+
+
+But the slack is not yet met. We can do the follwoing changes to remove the slack
+
+<img width="597" alt="image" src="https://github.com/user-attachments/assets/d867b8d9-5e72-46fa-b40d-806d44db49e8">
+
+The slack is removed
+
+<img width="610" alt="image" src="https://github.com/user-attachments/assets/710c9186-95cf-4804-aaff-3055b174fdba">
+
+
+Then run the following commands to run floorplan
+
+init_floorplan
+place_io
+tap_decap_or
+Run run_placement
+
+Using the magic layout, we can view the placement layout and our custom cells
+
+<img width="598" alt="image" src="https://github.com/user-attachments/assets/d805c604-5c2f-41d9-a845-0b9d48230fa2">
+
+Post Timing Analysis using OpenSTA
+
+
+Create pre_sta.conf file and my_base.sdc file
+
+<img width="568" alt="image" src="https://github.com/user-attachments/assets/229252d6-8f99-4060-be67-b7599cf223f1">
+
+
+Then use the command write_verilog to save the design into a file, which overwrites the current synthesis file. Placement is then carried out using the generated netlist.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
