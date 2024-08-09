@@ -94,6 +94,56 @@ The files are generated as shown in the figure
 <img width="609" alt="image" src="https://github.com/user-attachments/assets/a7681b82-e40b-4dce-b93d-c75171bf4fc9">
 
 
+The following modifications are made in the spice file
+<img width="599" alt="image" src="https://github.com/user-attachments/assets/1c90cab7-8ec6-43d1-bb0d-9f9cd53640b2">
+
+<img width="271" alt="image" src="https://github.com/user-attachments/assets/ac1e892c-b14b-4ad4-97bf-2a17c91f2be7">
+
+Next run the command plot y vs time a
+
+<img width="602" alt="image" src="https://github.com/user-attachments/assets/887fe006-91fe-4b85-9aa8-53965dcd6b81">
+
+Calculation of Rise time and Fall time Delay
+
+Rise time is defined as the duration it takes for a signal to transition from 20% to 80% of its final value. The rise time can be calculated as [2.19 - 2.13[ x 10^-9 = 62.7 ps.
+
+Zoom in to get the value of signal at 20% and 80% of VDD.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/0c4913cc-630f-4656-92f7-611cbb2e17f2">
+
+The following values can also be obtained by the below method
+
+<img width="588" alt="image" src="https://github.com/user-attachments/assets/a199ee5f-52d2-466f-b566-652f54d01d07">
+Fall time is the duration it takes for a signal to transition from 80% to 20% of its final value. The fall time is calculated as [4.09 - 4.053] x 10^-9 = 41.97 ps.
+<img width="581" alt="image" src="https://github.com/user-attachments/assets/bc54ced6-aee8-4146-b960-9b805b27e85c">
+Calculation of Propagation Delay
+
+Propagation delay is the time it takes for a signal to travel from the input to the output of a circuit. For instance, the propagation delay can be calculated as [2.15 - 2.10] x10^-9 = 48.9ps
+
+The Screen shot of Propagation Delay
+<img width="514" alt="image" src="https://github.com/user-attachments/assets/46e7b394-f14e-4c99-9be8-a138349fc5cb">
+By Using command magic -d XR open the magic tool Open the met3.mag file
+
+<img width="559" alt="image" src="https://github.com/user-attachments/assets/a7c655ee-0927-430e-8b02-1e1829ce248b">
+To find the DRC Error, select the part containing the error and type the command why in the console
+
+<img width="559" alt="image" src="https://github.com/user-attachments/assets/bb3a21b6-56b6-410e-84f8-87c00c38aa5e">
+To see contact cuts execute the command cif see VIA2 in the console
+
+<img width="526" alt="image" src="https://github.com/user-attachments/assets/4d488ba9-0382-4506-ad16-62f9be248a27">
+There are many DRC errors found, to fix one of the error i.e, error poly.9 follow the follwing steps
+
+nwell.mag is loaded
+
+Find out why is the error occuring
+<img width="602" alt="image" src="https://github.com/user-attachments/assets/bb76b18c-7240-4742-82b2-5a98b43c0432">
+To fix this DRC error we make some changes in the sky130A.tech file
+
+
+
+
+
+
 
 
 
