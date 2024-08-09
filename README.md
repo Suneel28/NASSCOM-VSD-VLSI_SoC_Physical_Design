@@ -229,6 +229,67 @@ Create pre_sta.conf file and my_base.sdc file
 Then use the command write_verilog to save the design into a file, which overwrites the current synthesis file. Placement is then carried out using the generated netlist.
 
 
+Use the following commands to analyse timing using real clocks
+
+read_lef /openLANE_flow/designs/picorv32a/runs/27-05_14-16/tmp/merged.lef
+
+read_def /openLANE_flow/designs/picorv32a/runs/27-05_14-16/results/cts/picorv32a.cts.def
+
+write_db pico_cts.db
+
+read_db pico_cts.db
+
+read_verilog /openLANE_flow/designs/picorv32a/runs/27-05_14-16/results/synthesis/picorv32a.synthesis_cts.v
+
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+set_propagated_clock [all_clocks]
+
+
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+
+Day 5
+Building Power Distribution Network
+
+A Power Distribution Network (PDN) in a System on Chip (SoC) ensures efficient and reliable delivery of power across the chip. It includes components like power pads, bumps, power rings, and a mesh of horizontal and vertical metal lines, along with decoupling capacitors and voltage regulators. Key design considerations involve managing IR drop, electromigration, dynamic and static power consumption, and ground bounce. The PDN design process involves defining power requirements, performing simulations to analyze power integrity issues, optimizing the network for performance and reliability, and validating the final design through post-layout simulations and testing to ensure robust operation.
+
+Using the command gen_pdn build power distribution network
+
+<img width="607" alt="image" src="https://github.com/user-attachments/assets/5b87b185-561b-4fb3-84b9-ee150b760c79">
+
+Power Distribution is successfully completed
+
+<img width="607" alt="image" src="https://github.com/user-attachments/assets/f2caf711-7176-473f-a002-e081a1d2f14d">
+
+Routing
+
+Triton Routing
+TritonRouting algorithm is used for rounting.
+
+To execute the automated rounting, we run the command run_routing
+
+
+<img width="608" alt="image" src="https://github.com/user-attachments/assets/1701a3c1-995b-4ff1-971a-71c26a56bbf4">
+
+Routed Layout
+
+<img width="296" alt="image" src="https://github.com/user-attachments/assets/229486cd-c98e-4621-bcec-ef92c2d97216">
+
+Final image of the layout
+
+<img width="291" alt="image" src="https://github.com/user-attachments/assets/0bb0ed9c-7fbf-44ec-b3d2-8945f9825925">
+
+Acknowledgements
+Kunal Ghosh, Co-founder (VSD Corp. Pvt. Ltd)
+
+Nickson P Jose, Teaching Assistant (VSD Corp. Pvt. Ltd)
+
+
+
+
+
 
 
 
